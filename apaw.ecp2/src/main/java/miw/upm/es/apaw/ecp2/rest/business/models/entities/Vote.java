@@ -2,9 +2,7 @@ package miw.upm.es.apaw.ecp2.rest.business.models.entities;
 public class Vote {
 
     private int id;
-
     private int vote;
-
     private Theme theme;
 
     public Vote() {

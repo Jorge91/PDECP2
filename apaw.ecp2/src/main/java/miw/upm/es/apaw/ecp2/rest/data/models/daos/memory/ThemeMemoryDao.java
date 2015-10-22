@@ -1,5 +1,10 @@
 package miw.upm.es.apaw.ecp2.rest.data.models.daos.memory;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import miw.upm.es.apaw.ecp2.rest.business.models.entities.Theme;
+import miw.upm.es.apaw.ecp2.rest.data.models.daos.ThemeDao;
 
 public class ThemeMemoryDao extends GenericMemoryDao<Theme, Integer> implements ThemeDao {
 
@@ -12,23 +17,25 @@ public class ThemeMemoryDao extends GenericMemoryDao<Theme, Integer> implements 
         return entity.getId();
     }
 
-    @Override
-    public Theme findByName(String themeName) {
-        for (Theme theme : this.findAll()) {
-            if (themeName.equals(theme.getName())) {
-                return theme;
+    public Theme getThemeByName(String themeName) {
+    	List<Theme> allThemes = this.findAll();
+    	Theme theme = null;
+    	for (int i = 0; i < allThemes.size(); i++) {
+            if (themeName.equals(allThemes.get(i).getName())) {
+                theme =  allThemes.get(i);
             }
         }
-        return null;
+        return theme;
     }
 
-    @Override
-    public List<String> findAllNames() {
-        ArrayList<String> nameList = new ArrayList<>();
-        for (Theme theme : this.findAll()) {
-            nameList.add(theme.getName());
+
+    public List<String> getThemes() {
+        ArrayList<String> themes = new ArrayList<String>();
+        List<Theme> allThemes = this.findAll();
+        for (int i = 0; i < allThemes.size(); i++) {
+        	themes.add(allThemes.get(i).getName());
         }
-        return nameList;
+        return themes;
     }
 
 }

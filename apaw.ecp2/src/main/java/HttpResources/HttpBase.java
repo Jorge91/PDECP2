@@ -12,8 +12,8 @@ public class HttpBase {
     private Object body;
 
     public HttpBase() {
-        cookies = new HashMap<>();
-        headerParams = new HashMap<>();
+        cookies = new HashMap<String, String>();
+        headerParams = new HashMap<String, String>();
     }
 
     public Map<String, String> getCookies() {

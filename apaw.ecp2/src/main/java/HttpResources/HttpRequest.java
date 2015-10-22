@@ -17,7 +17,7 @@ public class HttpRequest extends HttpBase {
         this.host = host;
         this.path = path;
         this.method = method;
-        queryParams = new HashMap<>();
+        queryParams = new HashMap<String, String>();
     }
 
     public HttpRequest() {

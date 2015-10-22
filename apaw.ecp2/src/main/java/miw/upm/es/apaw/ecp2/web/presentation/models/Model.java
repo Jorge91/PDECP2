@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Model {
 
-    private Map<String, Object> map = new HashMap<>();
+    private Map<String, Object> map = new HashMap<String, Object>();
 
     public void put(String key, Object value) {
         map.put(key, value);

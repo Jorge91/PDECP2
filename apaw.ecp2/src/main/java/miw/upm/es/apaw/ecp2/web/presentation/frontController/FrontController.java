@@ -1,4 +1,8 @@
 package miw.upm.es.apaw.ecp2.web.presentation.frontController;
+
+import HttpResources.HttpRequest;
+import HttpResources.HttpResponse;
+
 public class FrontController {
     private Dispatcher dispatcher;
 
